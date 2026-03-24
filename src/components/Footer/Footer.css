@@ -1,0 +1,188 @@
+.app-footer {
+  height: 156px;
+  margin-top: 2rem;
+  background: #eef3f6; /* pale card background */
+  border-radius: 10px;
+  padding: 0.75rem 2.5rem;
+  display: grid;
+  grid-template-columns: 320px 1fr 320px;
+  gap: 1.5rem;
+  align-items: center;
+  border: 1px solid rgba(15, 46, 97, 0.08); /* subtle outline to separate from page */
+  box-shadow: 0 18px 40px rgba(15, 46, 97, 0.06); /* gentle elevation */
+}
+
+.footer-brand {
+  display: flex;
+  gap: 1rem;
+  align-items: flex-start; /* logo and text align to top like the design */
+}
+
+
+
+.footer-logo img {
+  width: 34px;
+  height: 40px;
+  height: auto;
+  display: block;
+}
+
+.footer-brand__info {
+  display: flex;
+  flex-direction: column;
+
+}
+
+.footer-brand__title {
+  margin: 0;
+  font-weight: bold;
+  text-transform: uppercase;
+  color: #0f2e61;
+  font-size: 1.05rem;
+}
+
+.brand-highlight {
+  color: #16324a;
+  font-weight: 15;
+}
+
+.footer-brand__subtitle {
+  width: 100%;
+  margin: 0;
+  font-size: 0.6rem;
+  color: #4f5f78;
+}
+
+.footer-brand__contact {
+  display: flex;
+  flex-direction: column;
+  gap: 0.08rem;
+  font-size: 0.9rem;
+}
+
+.footer-brand__contact a {
+  color: #102547;
+  text-decoration: none;
+}
+
+.footer-brand__contact a:hover {
+  text-decoration: underline;
+}
+
+.footer-links {
+  display: flex;
+  justify-content: center;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+  font-weight: 15;
+}
+
+.footer-links a {
+  text-decoration: none;
+}
+
+.footer-links a:hover {
+  text-decoration: underline;
+}
+
+.footer-meta {
+  display: flex;
+  gap: 1rem;
+  align-items: flex-start;
+  justify-content: flex-end;
+  flex-direction: column; /* stack social icons above the emergency card */
+}
+
+.social-links {
+  display: flex;
+  gap: 0.6rem;
+  padding: 0.2rem 0.4rem;
+  border-radius: 999px;
+}
+
+.social-icon {
+  width: 38px;
+  height: 38px;
+  border-radius: 8px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.social-icon svg { width: 18px; height: 18px; }
+
+.emergency-card {
+  display: flex;
+  flex-direction: column;
+  background: #ffffff;
+  padding: 0.55rem 0.95rem;
+  border-radius: 16px;
+  min-width: 190px;
+  align-items: center;
+  text-align: center;
+  box-shadow: 0 8px 20px rgba(15, 46, 97, 0.06);
+}
+
+.emergency-card__label {
+  font-size: 0.72rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: #7180a0;
+}
+
+.emergency-card__value {
+  font-weight: 800;
+  color: #102547;
+  letter-spacing: 0.06em;
+  margin-top: 0.15rem;
+  font-size: 1.05rem;
+}
+
+.emergency-card__label {
+  display: block;
+  width: 100%;
+}
+
+.footer-base {
+  grid-column: 1 / -1;
+  margin-top: 0.5rem;
+  padding-top: 0.5rem;
+  text-align: center;
+  font-size: 0.85rem;
+  color: #55617d;
+}
+
+.footer-center-stack {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.4rem;
+}
+
+@media (max-width: 1024px) {
+  .app-footer {
+    grid-template-columns: 1fr;
+  }
+
+  .footer-links,
+  .footer-meta {
+    justify-content: flex-start;
+  }
+}
+
+@media (max-width: 640px) {
+  .app-footer {
+    padding: 1.5rem;
+  }
+
+  .footer-links {
+    gap: 1rem;
+  }
+
+  .social-links {
+    width: 100%;
+
+  .social-links { margin-right: 0; }
+    justify-content: space-between;
+  }
+}

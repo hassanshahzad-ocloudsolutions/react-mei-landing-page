@@ -1,0 +1,68 @@
+.filters-bar {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+  flex-wrap: wrap;
+  padding: 0.65rem 1rem;
+  border-radius: 36px;
+  background: radial-gradient(circle at top, rgba(255, 255, 255, 0.95), rgba(242, 247, 255, 0.9));
+  border: 1px solid rgba(132, 161, 201, 0.2);
+  box-shadow: 0 18px 35px rgba(15, 46, 97, 0.08);
+}
+
+.filter-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  background: transparent; /* no rounded background */
+  border: none;
+  border-radius: 0;
+  padding: 0; /* keep spacing small and inline */
+  margin: 0 0.75rem; /* slight horizontal separation between filters */
+  font-family: inherit;
+  cursor: pointer;
+  transition: color 0.12s ease, transform 0.12s ease;
+  color: inherit;
+  box-shadow: none;
+}
+
+.filter-chip:hover {
+  color: #0f65b8; /* subtle hover color to indicate interactivity */
+  transform: translateY(-1px);
+}
+
+.filter-chip__label {
+  font-size: 0.78rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: #7b879f;
+}
+
+.filter-chip__value {
+  font-size: 0.98rem;
+  font-weight: 700;
+  color: #0f9f69;
+}
+
+.filter-chip__caret {
+  color: #9ab0ca;
+  transition: transform 0.2s ease;
+}
+
+.filter-chip:hover .filter-chip__caret {
+  transform: translateY(1px);
+}
+
+.filter-action {
+  border: none;
+  background: #1f8efa;
+  color: #fff;
+  padding: 0.45rem 1.1rem;
+  border-radius: 999px;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  font-weight: 600;
+  cursor: pointer;
+  box-shadow: 0 6px 16px rgba(31, 142, 250, 0.35);
+}

@@ -1,0 +1,34 @@
+.status-badge {
+  display: inline-flex;
+  width: 110px;
+  height: 24px;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.01em;
+  padding: 0.15rem 0.8rem;
+  border-radius: 999px;
+  text-transform: none;
+  white-space: nowrap;
+}
+
+.status-badge.status-pre-contract {
+  background-color: #1D4289;
+  color: #FFFFFF;
+}
+
+.status-badge.status-in-development {
+  background-color: #CCD4D7;
+  color: #1D4289;
+}
+
+.status-badge.status-in-construction {
+  background-color: #F7BB39;
+  color: #002A3A;
+}
+
+.status-badge.status-operating {
+  background-color: #05A569;
+  color: #FFFFFF;
+}
