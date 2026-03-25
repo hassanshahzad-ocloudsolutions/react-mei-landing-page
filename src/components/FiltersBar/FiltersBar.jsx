@@ -75,11 +75,12 @@ const FiltersBar = ({
 
   return (
     <div className="filters-bar">
+
       <button className="filter-chip filter-chip--modal" type="button" onClick={onOpenFiltersModal}>
-        <div className="filter-chip__text">
-          <span className="filter-chip__label">All Filters</span>
-        </div>
+        <span className="filter-chip__label">All Filters</span>
+        {caret}
       </button>
+
       <div className="filter-chip-wrapper">
         <button
           className={`filter-chip ${open === 'stage' ? 'is-open' : ''}`}
