@@ -32,3 +32,9 @@
   background-color: #05A569;
   color: #FFFFFF;
 }
+
+/* cancelled / inactive */
+.status-badge.status-cancelled {
+  background-color: #E63946;
+  color: #FFFFFF;
+}
