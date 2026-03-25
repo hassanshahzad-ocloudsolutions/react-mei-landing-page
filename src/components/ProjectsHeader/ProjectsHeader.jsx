@@ -1,4 +1,5 @@
 import FiltersBar from '../FiltersBar/FiltersBar';
+import AllFiltersModal from '../modals/AllFiltersModal/AllFiltersModal';
 import './ProjectsHeader.css';
 
 const ProjectsHeader = ({
@@ -6,11 +7,19 @@ const ProjectsHeader = ({
   stageGroups,
   stateOptions,
   projectTypeOptions,
+  solutionTypeOptions,
+  offtakeTypeOptions,
   onToggleStageGroup,
   onToggleStageOption,
   onToggleStateOption,
   onToggleProjectType,
-  onKwChange
+  onToggleSolutionType,
+  onToggleOfftakeType,
+  onKwChange,
+  onResetFilters,
+  isFiltersModalOpen,
+  onOpenFiltersModal,
+  onCloseFiltersModal
 }) => {
   return (
     <section className="projects-header">
@@ -27,6 +36,24 @@ const ProjectsHeader = ({
         onToggleStateOption={onToggleStateOption}
         onToggleProjectType={onToggleProjectType}
         onKwChange={onKwChange}
+        onOpenFiltersModal={onOpenFiltersModal}
+      />
+      <AllFiltersModal
+        open={isFiltersModalOpen}
+        filters={filters}
+        stageGroups={stageGroups}
+        stateOptions={stateOptions}
+        projectTypeOptions={projectTypeOptions}
+        solutionTypeOptions={solutionTypeOptions}
+        offtakeTypeOptions={offtakeTypeOptions}
+        onToggleStageOption={onToggleStageOption}
+        onToggleStateOption={onToggleStateOption}
+        onToggleProjectType={onToggleProjectType}
+        onToggleSolutionType={onToggleSolutionType}
+        onToggleOfftakeType={onToggleOfftakeType}
+        onKwChange={onKwChange}
+        onResetFilters={onResetFilters}
+        onClose={onCloseFiltersModal}
       />
     </section>
   );

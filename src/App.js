@@ -19,9 +19,18 @@ const stateOptions = Array.from(new Set(projects.map((p) => p.state))).sort((a, 
 const projectTypeOptions = Array.from(
   new Set([...projects.map((p) => p.projectType), ...PROJECT_TYPE_OPTIONS])
 ).sort((a, b) => a.localeCompare(b));
+const solutionTypeOptions = Array.from(new Set(projects.map((p) => p.solutionType))).sort((a, b) =>
+  a.localeCompare(b)
+);
+const offtakeTypeOptions = Array.from(new Set(projects.map((p) => p.offtakeType))).sort((a, b) =>
+  a.localeCompare(b)
+);
 
 function App() {
-  const [filters, setFilters] = useState(() => buildDefaultFilters(stateOptions, projectTypeOptions));
+  const [filters, setFilters] = useState(() =>
+    buildDefaultFilters(stateOptions, projectTypeOptions, solutionTypeOptions, offtakeTypeOptions)
+  );
+  const [isModalOpen, setIsModalOpen] = useState(false);
 
   const filteredProjects = useMemo(
     () => projects.filter((project) => projectMatchesFilters(project, filters)),
@@ -101,6 +110,34 @@ function App() {
     });
   };
 
+  const toggleSolutionType = (option, checked) => {
+    setFilters((prev) => {
+      if (option === 'All') {
+        return { ...prev, solutionTypes: checked ? [...solutionTypeOptions] : [] };
+      }
+
+      const next = new Set(prev.solutionTypes);
+      if (checked) next.add(option);
+      else next.delete(option);
+
+      return { ...prev, solutionTypes: Array.from(next) };
+    });
+  };
+
+  const toggleOfftakeType = (option, checked) => {
+    setFilters((prev) => {
+      if (option === 'All') {
+        return { ...prev, offtakeTypes: checked ? [...offtakeTypeOptions] : [] };
+      }
+
+      const next = new Set(prev.offtakeTypes);
+      if (checked) next.add(option);
+      else next.delete(option);
+
+      return { ...prev, offtakeTypes: Array.from(next) };
+    });
+  };
+
   const changeKwRange = (field, value) => {
     const numericValue = Number(value);
     setFilters((prev) => {
@@ -115,6 +152,12 @@ function App() {
     });
   };
 
+  const resetFilters = () => {
+    setFilters(
+      buildDefaultFilters(stateOptions, projectTypeOptions, solutionTypeOptions, offtakeTypeOptions)
+    );
+  };
+
   return (
     <div className="app-shell">
       <Sidebar />
@@ -124,11 +167,19 @@ function App() {
           stageGroups={STAGE_GROUPS}
           stateOptions={stateOptions}
           projectTypeOptions={projectTypeOptions}
+          solutionTypeOptions={solutionTypeOptions}
+          offtakeTypeOptions={offtakeTypeOptions}
           onToggleStageGroup={toggleStageGroup}
           onToggleStageOption={toggleStageOption}
           onToggleStateOption={toggleStateOption}
           onToggleProjectType={toggleProjectType}
+          onToggleSolutionType={toggleSolutionType}
+          onToggleOfftakeType={toggleOfftakeType}
           onKwChange={changeKwRange}
+          onResetFilters={resetFilters}
+          isFiltersModalOpen={isModalOpen}
+          onOpenFiltersModal={() => setIsModalOpen(true)}
+          onCloseFiltersModal={() => setIsModalOpen(false)}
         />
         <ProjectsTable data={filteredProjects} />
         <Footer />

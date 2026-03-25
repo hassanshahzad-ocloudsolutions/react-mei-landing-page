@@ -9,6 +9,14 @@ export const STAGE_GROUPS = [
   }
 ];
 
+export const STAGE_COLOR_MAP = {
+  'Pre-Contract': { background: '#1D4289', color: '#FFFFFF' },
+  'In Development': { background: '#CCD4D7', color: '#1D4289' },
+  'In Construction': { background: '#F7BB39', color: '#002A3A' },
+  Operating: { background: '#05A569', color: '#FFFFFF' },
+  Cancelled: { background: '#E63946', color: '#FFFFFF' }
+};
+
 export const TOTAL_KW_LIMITS = {
   min: 0,
   max: 5000,
@@ -22,7 +30,7 @@ export const formatNumber = (value) =>
     value
   );
 
-export const buildDefaultFilters = (states, projectTypes) => ({
+export const buildDefaultFilters = (states, projectTypes, solutionTypes, offtakeTypes) => ({
   stage: {
     selected: [...STAGE_GROUPS.find((g) => g.label === 'Active').options],
     groups: {
@@ -32,6 +40,8 @@ export const buildDefaultFilters = (states, projectTypes) => ({
   },
   states: [...states],
   projectTypes: [...projectTypes],
+  solutionTypes: [...solutionTypes],
+  offtakeTypes: [...offtakeTypes],
   totalKw: {
     min: TOTAL_KW_LIMITS.min,
     max: TOTAL_KW_LIMITS.max
@@ -42,6 +52,8 @@ export const projectMatchesFilters = (project, filters) => {
   const inStage = filters.stage.selected.includes(project.stage);
   const inState = filters.states.includes(project.state);
   const inProjectType = filters.projectTypes.includes(project.projectType);
+  const inSolutionType = filters.solutionTypes.includes(project.solutionType);
+  const inOfftakeType = filters.offtakeTypes.includes(project.offtakeType);
   const withinKw = project.totalKwDc >= filters.totalKw.min && project.totalKwDc <= filters.totalKw.max;
-  return inStage && inState && inProjectType && withinKw;
+  return inStage && inState && inProjectType && inSolutionType && inOfftakeType && withinKw;
 };

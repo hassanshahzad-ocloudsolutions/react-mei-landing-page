@@ -1,5 +1,6 @@
 import { useMemo, useState } from 'react';
 import { formatNumber, TOTAL_KW_LIMITS } from '../../constants/filters';
+import DualRangeSlider from '../DualRangeSlider/DualRangeSlider';
 import './FiltersBar.css';
 
 const caret = (
@@ -24,7 +25,8 @@ const FiltersBar = ({
   onToggleStageOption,
   onToggleStateOption,
   onToggleProjectType,
-  onKwChange
+  onKwChange,
+  onOpenFiltersModal = () => {}
 }) => {
   const [open, setOpen] = useState(null);
 
@@ -73,6 +75,11 @@ const FiltersBar = ({
 
   return (
     <div className="filters-bar">
+      <button className="filter-chip filter-chip--modal" type="button" onClick={onOpenFiltersModal}>
+        <div className="filter-chip__text">
+          <span className="filter-chip__label">All Filters</span>
+        </div>
+      </button>
       <div className="filter-chip-wrapper">
         <button
           className={`filter-chip ${open === 'stage' ? 'is-open' : ''}`}
@@ -194,49 +201,16 @@ const FiltersBar = ({
           {caret}
         </button>
             {open === 'kw' && (
-          <div className="filter-dropdown filter-dropdown--kw">
-            <div className="range-row">
-              {/* visual track showing selected area */}
-              {
-                (() => {
-                  const minVal = Number(filters.totalKw.min);
-                  const maxVal = Number(filters.totalKw.max);
-                  const rangeTotal = TOTAL_KW_LIMITS.max - TOTAL_KW_LIMITS.min || 1;
-                  const leftPct = ((minVal - TOTAL_KW_LIMITS.min) / rangeTotal) * 100;
-                  const rightPct = ((maxVal - TOTAL_KW_LIMITS.min) / rangeTotal) * 100;
-                  const trackStyle = {
-                    background: `linear-gradient(to right, #e6eef8 0%, #e6eef8 ${leftPct}%, #9ad62f ${leftPct}%, #9ad62f ${rightPct}%, #e6eef8 ${rightPct}%, #e6eef8 100%)`
-                  };
-
-                  return (
-                    <div className="range-track" style={trackStyle} aria-hidden>
-                      {/* two overlapping ranges for dual-thumb interaction */}
-                      <input
-                        className="range-input range-input--min"
-                        type="range"
-                        min={TOTAL_KW_LIMITS.min}
-                        max={TOTAL_KW_LIMITS.max}
-                        step={TOTAL_KW_LIMITS.step}
-                        value={filters.totalKw.min}
-                        onChange={(e) => onKwChange('min', e.target.value)}
-                        aria-label="Minimum kW"
-                      />
-                      <input
-                        className="range-input range-input--max"
-                        type="range"
-                        min={TOTAL_KW_LIMITS.min}
-                        max={TOTAL_KW_LIMITS.max}
-                        step={TOTAL_KW_LIMITS.step}
-                        value={filters.totalKw.max}
-                        onChange={(e) => onKwChange('max', e.target.value)}
-                        aria-label="Maximum kW"
-                      />
-                    </div>
-                  );
-                })()
-              }
-            </div>
-            <div className="range-inputs">
+              <div className="filter-dropdown filter-dropdown--kw">
+                <DualRangeSlider
+                  min={TOTAL_KW_LIMITS.min}
+                  max={TOTAL_KW_LIMITS.max}
+                  step={TOTAL_KW_LIMITS.step}
+                  valueMin={filters.totalKw.min}
+                  valueMax={filters.totalKw.max}
+                  onChange={onKwChange}
+                />
+                <div className="range-inputs">
               <label>
                 <span>Min</span>
                 <input
