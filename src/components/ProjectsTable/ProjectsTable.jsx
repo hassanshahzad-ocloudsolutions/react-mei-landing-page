@@ -25,6 +25,9 @@ const ProjectsTable = ({ data }) => {
     return data.slice(start, start + pageSize);
   }, [data, page]);
 
+  // cumulative count shown to the user (e.g. page 1 -> 15 of 115, page 2 -> 30 of 115)
+  const shownCount = Math.min(page * pageSize, total);
+
   const goFirst = () => setPage(1);
   const goLast = () => setPage(totalPages);
   const goPrev = () => setPage((p) => Math.max(1, p - 1));
@@ -67,7 +70,7 @@ const ProjectsTable = ({ data }) => {
         </table>
       </div>
       <div className="projects-table__footer">
-        <span>Showing <strong>{pageItems.length}</strong> of {total}</span>
+        <span>Showing <strong>{shownCount}</strong> of {total}</span>
         <div className="table-pagination">
           <button aria-label="First page" onClick={goFirst} disabled={page === 1}>«</button>
           <button aria-label="Previous page" onClick={goPrev} disabled={page === 1}>‹</button>
