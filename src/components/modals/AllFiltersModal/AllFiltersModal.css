@@ -22,17 +22,28 @@
 }
 
 .filters-modal__header {
-  padding: 1.5rem 2rem 1rem;
-  border-bottom: 1px solid rgba(9, 33, 58, 0.08);
+  position: relative;
+  padding: 15px 20px;
+  height: auto;
+  width: auto;
+  border: 1px solid #CCD4D7;
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   align-items: center;
 }
 
 .filters-modal__header h2 {
   margin: 0;
-  font-size: 1.4rem;
-  color: #061a33;
+  text-align: center;
+  font-size: 22px;
+  font-family: 'Gotham', sans-serif;
+  font-weight: 600;
+  color: #002A3A;
+}
+
+.filters-modal__header button{
+  position: absolute;
+  right: 20px;
 }
 
 .filters-modal__close {
@@ -56,7 +67,10 @@
 .filters-modal__section h3 {
   margin-bottom: 0.75rem;
   color: #0b2342;
-  font-size: 1.05rem;
+  font-family: "Gotham", sans-serif;
+  font-size: 15px;
+  font-weight: 400;
+
 }
 
 .filters-modal__section + .filters-modal__section {
@@ -76,25 +90,24 @@
 }
 
 .pill {
+  height:auto;
+  width:auto;
   border: 1px solid rgba(15, 46, 97, 0.25);
   background: #fff;
   border-radius: 999px;
-  padding: 0.45rem 1.1rem;
-  font-weight: 600;
-  color: #0b2342;
+  font-weight: 400;
+  color: #344F5F;
   cursor: pointer;
   transition: all 0.15s ease;
   display: inline-flex;
   align-items: center;
-  gap: 0.35rem;
+  justify-content: center;
+  gap: 2px;
 }
 
-.pill--outline {
-  background: #f6f8fb;
-}
 
 .pill--active {
-  background: #0f65b8;
+  background: #1D4289;
   color: #fff;
   border-color: #0f65b8;
   box-shadow: 0 12px 22px rgba(15, 101, 184, 0.25);
@@ -112,25 +125,6 @@
   box-shadow: none;
 }
 
-.pill--selectable {
-  min-width: 110px;
-  justify-content: flex-start;
-}
-
-.pill--toolbar {
-  min-width: 120px;
-}
-
-.pill--state {
-  font-weight: 500;
-  background: #fff;
-}
-
-.pill--state.pill--active {
-  background: #0f65b8;
-  color: #fff;
-  border-color: #0f65b8;
-}
 
 .pill__check {
   width: 16px;

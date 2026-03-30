@@ -199,14 +199,14 @@ const AllFiltersModal = ({
             </div>
           </section>
 
-  <section className="filters-modal__section">
+          <section className="filters-modal__section">
             <h3>Project Type</h3>
             <div className="pill-grid">
               {projectTypeOptions.map((type) => (
                 <button
                   key={type}
                   type="button"
-                  className={`pill pill--selectable ${isProjectTypeSelected(type) ? 'pill--active pill--checked' : ''}`}
+                  className={`pill ${isProjectTypeSelected(type) ? 'pill--active pill--checked' : ''}`}
                   onClick={() => toggleProjectType(type)}
                   aria-pressed={isProjectTypeSelected(type)}
                 >
@@ -278,7 +278,7 @@ const AllFiltersModal = ({
             <div className="state-toolbar">
               <button
                 type="button"
-                className={`pill pill--outline pill--toolbar ${allStatesSelected ? 'pill--active pill--checked' : ''}`}
+                className={`pill ${allStatesSelected ? 'pill--active pill--checked' : ''}`}
                 onClick={() => onToggleStateOption('All', !allStatesSelected)}
               >
                 <span className="pill__check" aria-hidden="true">
@@ -312,7 +312,7 @@ const AllFiltersModal = ({
                   <button
                     key={state}
                     type="button"
-                    className={`pill pill--outline pill--state ${selected ? 'pill--active' : ''}`}
+                    className={`pill ${selected ? 'pill--active' : ''}`}
                     onClick={() => toggleState(state)}
                     aria-pressed={selected}
                   >
@@ -332,7 +332,7 @@ const AllFiltersModal = ({
                   <button
                     key={phase}
                     type="button"
-                    className={`pill pill--selectable ${selected ? 'pill--active pill--checked' : ''}`}
+                    className={`pill  ${selected ? 'pill--active pill--checked' : ''}`}
                     onClick={() => toggleDeliveryPhase(phase)}
                     aria-pressed={selected}
                   >

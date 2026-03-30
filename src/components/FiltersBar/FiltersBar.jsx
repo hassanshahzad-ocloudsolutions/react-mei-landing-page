@@ -1,6 +1,7 @@
 import { useMemo, useState } from 'react';
 import { formatNumber, TOTAL_KW_LIMITS } from '../../constants/filters';
 import DualRangeSlider from '../DualRangeSlider/DualRangeSlider';
+import { FiFilter } from "react-icons/fi";
 import './FiltersBar.css';
 
 const caret = (
@@ -76,10 +77,11 @@ const FiltersBar = ({
   return (
     <div className="filters-bar">
 
-      <button className="filter-chip filter-chip--modal" type="button" onClick={onOpenFiltersModal}>
-        <span className="filter-chip__label">All Filters</span>
-        {caret}
-      </button>
+      <div className="filter-chip-wrapper">
+        <button className="filter-chip" type="button" onClick={onOpenFiltersModal}>
+           <FiFilter size={17} /><span className="filter-chip__label">All Filters</span>
+        </button>
+      </div>
 
       <div className="filter-chip-wrapper">
         <button

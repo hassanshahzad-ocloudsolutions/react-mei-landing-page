@@ -1,15 +1,14 @@
 .app-footer {
-  height: 156px;
-  margin-top: 2rem;
-  background: #eef3f6; /* pale card background */
-  border-radius: 10px;
+  height: auto;
+  width: auto;
+  background-color: rgba(29, 66, 137,0.07);
+  border-radius: 16px;
   padding: 0.75rem 2.5rem;
   display: grid;
   grid-template-columns: 320px 1fr 320px;
   gap: 1.5rem;
   align-items: center;
-  border: 1px solid rgba(15, 46, 97, 0.08); /* subtle outline to separate from page */
-  box-shadow: 0 18px 40px rgba(15, 46, 97, 0.06); /* gentle elevation */
+  border: 1px solid rgba(255,255,255, 0.30); /* subtle outline to separate from page */
 }
 
 .footer-brand {
@@ -23,7 +22,6 @@
 .footer-logo img {
   width: 34px;
   height: 40px;
-  height: auto;
   display: block;
 }
 

@@ -3,8 +3,8 @@ import { FaHome, FaTh, FaRegCreditCard, FaCube,FaRegUserCircle } from 'react-ico
 import logo from '../../assets/images/MEI+.png';
 
 const navItems = [
-  { key: 'overview', label: 'Overview', icon: FaHome, active: true },
-  { key: 'portfolio', label: 'Portfolio', icon: FaTh },
+  { key: 'overview', label: 'Overview', icon: FaHome},
+  { key: 'portfolio', label: 'Portfolio', icon: FaTh, active: true },
   { key: 'billing', label: 'Billing', icon: FaRegCreditCard },
   { key: 'resources', label: 'Resources', icon: FaCube }
 ];
@@ -12,7 +12,7 @@ const navItems = [
 
 const Sidebar = () => (
   <aside className="sidebar">
-    <div>
+    <div >
       <div className="sidebar__brand">
         <div className="brand-mark">
           <img src={logo} alt="MEI logo" />
