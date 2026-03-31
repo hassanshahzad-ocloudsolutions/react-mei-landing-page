@@ -30,7 +30,7 @@
   width: auto;
   font-family: 'Gotham',sans-serif;
   font-size: 15px;
-  font-weight: 500;
+  font-weight: bold;
   letter-spacing: 0.12em;
   color: #344F5F;
   text-align: left;
@@ -61,6 +61,7 @@
   font-family: 'Gotham', sans-serif;
   font-weight: 400;
   font-size: 15px;
+  margin: auto;
   color: #102547;
 }
 

@@ -8,8 +8,9 @@
   position: sticky; /* keep sidebar content visible while scrolling */
   top: 1.5rem; /* offset from the top of the viewport */
   align-self: flex-start;
-  overflow: auto;
-  -webkit-overflow-scrolling: touch;
+  flex-shrink: 0;
+  max-height: calc(100vh - 3rem);
+  overflow: visible;
 }
 
 .sidebar__brand {

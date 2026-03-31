@@ -1,7 +1,7 @@
-import { ImOpera } from 'react-icons/im';
+
 import StatusBadge from '../StatusBadge/StatusBadge';
 import './ProjectsTable.css';
-import React, { useState, useEffect, useMemo } from 'react';
+import { useState, useEffect, useMemo } from 'react';
 import { BsFillCaretDownFill } from 'react-icons/bs';
 import { FiChevronDown, FiChevronUp } from 'react-icons/fi';
 

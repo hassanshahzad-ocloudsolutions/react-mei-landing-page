@@ -1,8 +1,14 @@
 .app-shell {
   display: flex;
-  height: 978px;
-  width:1512px;
-  background-color: linear-gradient(180deg, #eff4ff 0%, #dfe8ff 60%, #d4e0ff 100%);
+  width: 978px;
+  height: 1512px;
+  gap: 1.5rem;
+  min-height: 100vh;
+  width: 100%;
+  padding: 1.5rem 1.75rem 2rem;
+  background: linear-gradient(180deg, #eff4ff 0%, #dfe8ff 60%, #d4e0ff 100%);
+  align-items: flex-start;
+  box-sizing: border-box;
 }
 
 .main-panel {
