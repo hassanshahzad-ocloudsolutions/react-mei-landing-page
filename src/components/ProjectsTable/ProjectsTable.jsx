@@ -61,7 +61,7 @@ const ProjectsTable = ({ data }) => {
           <thead>
             <tr className="project-table-row">
               <th>
-                <div className="projects-th">
+                <div className="projects-th-project-name">
                   <span>Project Name</span>
                   <button
                     type="button"
@@ -74,7 +74,7 @@ const ProjectsTable = ({ data }) => {
                 </div>
               </th>
               <th>
-                <div className="projects-th">
+                <div className="projects-th-stage">
                   <span>Stage</span>
                   <button
                     type="button"
@@ -87,7 +87,7 @@ const ProjectsTable = ({ data }) => {
                 </div>
               </th>
               <th>
-                <div className="projects-th">
+                <div className="projects-th-state">
                   <span>State</span>
                   <button
                     type="button"
@@ -100,7 +100,7 @@ const ProjectsTable = ({ data }) => {
                 </div>
               </th>
               <th>
-                <div className="projects-th">
+                <div className="projects-th-totalKwDc">
                   <span>Total kW DC</span>
                   <button
                     type="button"
@@ -113,7 +113,7 @@ const ProjectsTable = ({ data }) => {
                 </div>
               </th>
               <th>
-                <div className="projects-th">
+                <div className="projects-th-projectType">
                   <span>Project Type</span>
                   <button
                     type="button"
@@ -126,7 +126,7 @@ const ProjectsTable = ({ data }) => {
                 </div>
               </th>
               <th>
-                <div className="projects-th">
+                <div className="projects-th-solutionType">
                   <span>Solution Type</span>
                   <button
                     type="button"
@@ -139,7 +139,7 @@ const ProjectsTable = ({ data }) => {
                 </div>
               </th>
               <th>
-                <div className="projects-th">
+                <div className="projects-th-offtakeType">
                   <span>Offtake Type</span>
                   <button
                     type="button"
@@ -156,15 +156,15 @@ const ProjectsTable = ({ data }) => {
           <tbody>
             {pageItems.map((project) => (
               <tr key={project.id} className="table-row">
-                <td>{project.name}</td>
-                <td>
+                <td className="project-name">{project.name}</td>
+                <td className="project-stage" >
                   <StatusBadge status={project.stage} />
                 </td>
-                <td>{project.state}</td>
-                <td>{numberFormatter.format(project.totalKwDc)}</td>
-                <td>{project.projectType}</td>
-                <td>{project.solutionType}</td>
-                <td>{project.offtakeType}</td>
+                <td className="project-state">{project.state}</td>
+                <td className="project-totalKwDc">{numberFormatter.format(project.totalKwDc)}</td>
+                <td className="project-projectType">{project.projectType}</td>
+                <td className="project-solutionType">{project.solutionType}</td>
+                <td className="project-offtakeType">{project.offtakeType}</td>
               </tr>
             ))}
           </tbody>

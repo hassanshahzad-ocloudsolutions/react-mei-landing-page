@@ -6,9 +6,6 @@
   --text-muted: #5c6475;
 }
 
-* {
-  box-sizing: border-box;
-}
 
 body {
   margin: 0;
