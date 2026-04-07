@@ -30,7 +30,7 @@
   height: auto;
   font-family: 'Gotham',sans-serif;
   font-size: 15px;
-  font-weight: bold;
+  font-weight: 500;
   display: flex;
   justify-content: space-between;
 }
@@ -40,7 +40,7 @@
   height: auto;
   font-family: 'Gotham',sans-serif;
   font-size: 15px;
-  font-weight: bold;
+  font-weight: 500;
   display: flex;
   justify-content: space-between;
 }
@@ -50,7 +50,7 @@
   height: auto;
   font-family: 'Gotham',sans-serif;
   font-size: 15px;
-  font-weight: bold;
+  font-weight: 500;
   display: flex;
   justify-content: space-between;
 }
@@ -60,7 +60,7 @@
   height: auto;
   font-family: 'Gotham',sans-serif;
   font-size: 15px;
-  font-weight: bold;
+  font-weight: 500;
   display: flex;
   justify-content: space-between;
 }
@@ -70,7 +70,7 @@
   height: auto;
   font-family: 'Gotham',sans-serif;
   font-size: 15px;
-  font-weight: bold;
+  font-weight: 500;
   display: flex;
   justify-content: space-between;
 }
@@ -80,7 +80,7 @@
   height: auto;
   font-family: 'Gotham',sans-serif;
   font-size: 15px;
-  font-weight: bold;
+  font-weight: 500;
   display: flex;
   justify-content: space-between;
 }
@@ -90,7 +90,7 @@
   height: auto;
   font-family: 'Gotham',sans-serif;
   font-size: 15px;
-  font-weight: bold;
+  font-weight: 500;
   display: flex;
   justify-content: space-between;
 }
@@ -104,40 +104,85 @@
   margin-bottom: auto;
 }
 
-
-.project-name{
+.project-name-cell{
+  font-family: 'Gotham',sans-serif;
+  color: #002A3A;
+  font-weight: 400;
+  font-size: 15px;
+  display: inline-block;
   width: 265px;
+  height: 18px;
+  white-space: nowrap;
+  overflow: hidden;
+
+}
+
+.inner-stage-cell{
+  display: inline-block;
+  width: 144.67px;
   height: 24px;
+  white-space: nowrap;
+  overflow: hidden;
 }
 
-.project-stage {
-  width: 144px;
-  height: auto;
+.inner-state-cell{
+  font-family: 'Gotham',sans-serif;
+  color: #002A3A;
+  font-weight: 400;
+  font-size: 15px;
+  display: inline-block;
+  width: 144.67px;
+  height: 18px;
+  white-space: nowrap;
+  overflow: hidden;
 }
 
-.project-state{
-  width: 144px;
-  height: auto;
+.inner-kwdc-cell{
+  font-family: 'Gotham',sans-serif;
+  color: #002A3A;
+  font-weight: 400;
+  font-size: 15px;
+  display: inline-block;
+  width: 144.67px;
+  height: 18px;
+  white-space: nowrap;
+  overflow: hidden;
 }
 
-.project-totalKwDc{
-  width: 144px;
-  height: auto;
+.inner-projectType-cell{
+  font-family: 'Gotham',sans-serif;
+  color: #002A3A;
+  font-weight: 400;
+  font-size: 15px;
+  display: inline-block;
+  width: 144.67px;
+  height: 18px;
+  white-space: nowrap;
+  overflow: hidden;
 }
 
-.project-projectType{
-  width: 144px;
-  height: auto;
+.inner-solutionType-cell{
+  font-family: 'Gotham',sans-serif;
+  color: #002A3A;
+  font-weight: 400;
+  font-size: 15px;
+  display: inline-block;
+  width: 144.67px;
+  height: 18px;
+  white-space: nowrap;
+  overflow: hidden;
 }
 
-.project-solutionType{
-  width: 144px;
-  height: auto;
-}
-
-.project-offtakeType{
-  width: 144px;
-  height: auto;
+.inner-offtakeType-cell{
+  font-family: 'Gotham',sans-serif;
+  color: #002A3A;
+  font-weight: 400;
+  font-size: 15px;
+  display: inline-block;
+  width: 144.67px;
+  height: 18px;
+  white-space: nowrap;
+  overflow: hidden;
 }
 
 .projects-table__footer {

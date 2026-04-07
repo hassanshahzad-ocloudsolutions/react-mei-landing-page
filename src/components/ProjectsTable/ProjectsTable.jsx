@@ -155,16 +155,16 @@ const ProjectsTable = ({ data }) => {
           </thead>
           <tbody>
             {pageItems.map((project) => (
-              <tr key={project.id} className="table-row">
-                <td className="project-name">{project.name}</td>
+              <tr key={project.id} className="project-table-row">
+                <td className="project-name"><span className="project-name-cell">{project.name}</span></td>
                 <td className="project-stage" >
-                  <StatusBadge status={project.stage} />
+                  <span className="inner-stage-cell"><StatusBadge status={project.stage} /></span>
                 </td>
-                <td className="project-state">{project.state}</td>
-                <td className="project-totalKwDc">{numberFormatter.format(project.totalKwDc)}</td>
-                <td className="project-projectType">{project.projectType}</td>
-                <td className="project-solutionType">{project.solutionType}</td>
-                <td className="project-offtakeType">{project.offtakeType}</td>
+                <td className="project-state"><span className="inner-state-cell">{project.state}</span></td>
+                <td className="project-totalKwDc"><span className="inner-kwdc-cell">{numberFormatter.format(project.totalKwDc)}</span></td>
+                <td className="project-projectType"><span className="inner-projectType-cell">{project.projectType}</span></td>
+                <td className="project-solutionType"><span className="inner-solutionType-cell">{project.solutionType}</span></td>
+                <td className="project-offtakeType"><span className="inner-offtakeType-cell">{project.offtakeType}</span></td>
               </tr>
             ))}
           </tbody>
