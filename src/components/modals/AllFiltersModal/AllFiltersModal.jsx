@@ -64,7 +64,6 @@ const AllFiltersModal = ({
   onClose
 }) => {
   const [stateQuery, setStateQuery] = useState('');
-  const [statePlaceholderChecked, setStatePlaceholderChecked] = useState(false);
   const [deliveryPhases, setDeliveryPhases] = useState(['Onboard', 'Design']);
   const [utilityQuery, setUtilityQuery] = useState('');
   const [selectedUtilities, setSelectedUtilities] = useState(DEFAULT_SELECTED_UTILITIES);
