@@ -3,12 +3,14 @@
   flex-direction: column;
   gap: 25px;
   margin-top: auto;
+  position: relative;
 }
 
 .projects-header__title {
   display: flex;
-  flex-direction: column;
-  gap: 0.4rem;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.75rem;
 }
 
 .projects-header__title h1 {
@@ -16,5 +18,49 @@
   margin: 0;
   color: #122740;
 }
+
+/* Hamburger and dropdown for small screens */
+.header-hamburger {
+  display: none; /* show on small screens via media query */
+  background: transparent;
+  border: none;
+  font-size: 1.25rem;
+  padding: 6px;
+  cursor: pointer;
+  color: #122740;
+}
+
+.header-sidebar-backdrop {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.3);
+  z-index: 800;
+}
+
+.header-sidebar-panel {
+  position: absolute;
+  top: calc(100% + 8px);
+  right: 0;
+  width: 320px;
+  max-width: calc(100vw - 32px);
+  background: #fff;
+  border-radius: 8px;
+  box-shadow: 0 8px 24px rgba(17,24,39,0.12);
+  z-index: 900;
+  padding: 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.header-panel-brand .brand-mark img { max-height: 28px; }
+.header-panel-nav { display: flex; flex-direction: column; gap: 8px; }
+.header-panel-user { display:flex; align-items:center; gap:8px; padding-top:4px; border-top:1px solid #f0f3f6; margin-top:6px; }
+
+/* Show the hamburger on small screens */
+@media (max-width: 960px) {
+  .header-hamburger { display: inline-flex; }
+}
+
 
 

@@ -1,6 +1,7 @@
 .filters-bar {
   width: auto;
   height: auto;
+  max-width: 1202px;
   display: flex;
   align-items: flex-start;
   justify-content: flex-start;
@@ -23,8 +24,8 @@
   width: auto;
   height: auto;
   display: inline-flex;
-  align-items: flex-start;
-  justify-content: flex-start;
+  align-items: center;
+  justify-content: center;
   gap: 5px;
   background: #fff;
   border: 1px solid rgba(132, 161, 201, 0.25);
@@ -60,8 +61,8 @@
 
 
 .filter-chip__value {
-  font-size: 0.85rem;
-  font-weight: 700;
+  font-size: 15px;
+  font-weight: 500;
   color: #0c9c60;
 }
 
@@ -81,12 +82,12 @@
   width: auto;
   height: auto;
   padding: 0.85rem;
-  background: #fff;
+  background: rgba(255,255,255,0.6);
   border-radius: 18px;
   box-shadow: 0 25px 55px rgba(15, 46, 97, 0.16);
   border: 1px solid rgba(132, 161, 201, 0.2);
   z-index: 10;
-  backdrop-filter: blur(10px);
+  backdrop-filter: blur(8px);
 }
 
 .filter-dropdown__section + .filter-dropdown__section {
@@ -118,34 +119,36 @@
 }
 
 .checkbox-label {
-  font-size: 1rem;
-  font-weight: 15;
+  font-family: 'Gotham', sans-serif;
+  font-size: 15px;
+  font-weight:400;
 }
 
 .checkbox-label--group {
   font-size: 1.05rem;
+  color: #002A3A ;
 }
 
 .status-pill {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  padding: 0.45rem 0.9rem;
+  padding: 6px 11px;
   border-radius: 999px;
-  font-weight: 15;
-  font-size: 0.95rem;
+  font-weight: 500;
+  font-size: 11px;
   color: #0e1b2c;
   background: #eaf2ff;
-  min-width: 180px;
+  box-sizing: content-box;
 
 }
 
-.status-pill--pre-contract { background: #123c82; color: #fff; }
-.status-pill--in-development { background: #c7ced8; color: #1b3352; }
-.status-pill--in-construction { background: #f2b735; color: #1a180f; }
-.status-pill--operating { background: #03a35c; color: #fff; }
-.status-pill--inactive { background: #e8edf5; color: #1f2f4a; }
-.status-pill--cancelled { background: #d9153f; color: #fff; }
+.status-pill--pre-contract { background: #123c82; color: #fff; height: 15px; width: 105px; }
+.status-pill--in-development { background: #c7ced8; color: #1b3352; height: 15px; width: 105px;}
+.status-pill--in-construction { background: #f2b735; color: #1a180f;height: 15px; width: 105px;}
+.status-pill--operating { background: #03a35c; color: #fff;height: 15px; width: 105px; }
+.status-pill--inactive { background: #e8edf5; color: #1f2f4a;height: 15px; width: 105px; }
+.status-pill--cancelled { background: #d9153f; color: #fff;height: 15px; width: 105px; }
 
 .filter-dropdown--kw {
   min-width: 360px;

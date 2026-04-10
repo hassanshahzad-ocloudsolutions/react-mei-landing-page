@@ -286,14 +286,6 @@ const AllFiltersModal = ({
                 </span>
                 <span className="pill__label">All States</span>
               </button>
-              <label className="inline-checkbox">
-                <input
-                  type="checkbox"
-                  checked={statePlaceholderChecked}
-                  onChange={(e) => setStatePlaceholderChecked(e.target.checked)}
-                />
-                <span>Placeholder Text</span>
-              </label>
             </div>
             <div className="chip-list">
               {filters.states.map((state) => (

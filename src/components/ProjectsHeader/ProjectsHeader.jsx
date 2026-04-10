@@ -1,5 +1,6 @@
 import FiltersBar from '../FiltersBar/FiltersBar';
 import AllFiltersModal from '../modals/AllFiltersModal/AllFiltersModal';
+import HeaderSidebarDropdown from './HeaderSidebarDropdown';
 import './ProjectsHeader.css';
 
 const ProjectsHeader = ({
@@ -25,6 +26,7 @@ const ProjectsHeader = ({
     <section className="projects-header">
       <div className="projects-header__title">
         <h1>All Projects</h1>
+        <HeaderSidebarDropdown />
       </div>
       <FiltersBar
         filters={filters}

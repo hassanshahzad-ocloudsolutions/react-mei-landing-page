@@ -1,23 +1,23 @@
 .app-shell {
   display: flex;
-  width: 978px;
-  height: 1512px;
-
+  max-width: 1512px;
+  max-height: 978px;
+  width: auto;
+  height: auto;
   align-items: flex-start;
-  box-sizing: border-box;
+  min-height: 100vh;
+  min-width: 100vw;
 }
 
 .main-panel {
-  flex: 1;
-  width: 1226px;
-  height: 1083px;
+  max-width: 1226px;
+  max-height: 1083px;
+  height: auto;
+  width: auto;
   display: flex;
   flex-direction: column;
   gap: 23px;
+
 }
 
-@media (max-width: 960px) {
-  .main-panel {
-    padding-top: 3rem;
-  }
-}
+

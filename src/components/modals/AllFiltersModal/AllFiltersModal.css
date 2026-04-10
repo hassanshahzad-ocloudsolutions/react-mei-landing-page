@@ -109,8 +109,6 @@
 .pill--active {
   background: #1D4289;
   color: #fff;
-  border-color: #0f65b8;
-  box-shadow: 0 12px 22px rgba(15, 101, 184, 0.25);
 }
 
 .pill--stage {
@@ -331,12 +329,11 @@
   border: none;
   background: linear-gradient(135deg, #b5e024, #74c300);
   color: #0b1f3b;
-  box-shadow: 0 12px 30px rgba(116, 195, 0, 0.35);
 }
 
 @media (max-width: 768px) {
   .filters-modal {
-    width: 100%;
+    width: 50vh;
     max-height: 100vh;
     border-radius: 0;
   }

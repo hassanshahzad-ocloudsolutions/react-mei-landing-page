@@ -1,6 +1,7 @@
 .app-footer {
   width: auto;
   height: auto;
+  max-width: 1202px;
   background:rgba(29, 66, 137, 0.07);
   border-radius: 16px;
   padding: 31px 30px;
@@ -9,6 +10,7 @@
   gap: 1.75rem;
   align-items: center;
   border: 1px solid rgba(255,255,255,0.30);
+  margin: 0;
 }
 
 .footer-column {
