@@ -28,6 +28,25 @@
   margin: 0 4px;
   background: transparent;
   pointer-events: auto;
+  z-index: 2;
+}
+
+/* Don't force one input above the other by default — let hover/active
+   determine which thumb is on top. This avoids one-sided overlap issues
+   (left or right stealing events). */
+.range-input {
+  z-index: 2;
+}
+
+/* Bring the thumb under the pointer to the front so dragging works reliably.
+   Include :hover so the thumb you approach with the cursor rises before
+   pressing (helps with edge cases where hit areas overlap). */
+.range-input:hover,
+.range-input:active,
+.range-input:focus {
+  z-index: 4;
+  outline: none;
+  transform: translateZ(0);
 }
 
 .range-input::-webkit-slider-runnable-track {
@@ -48,7 +67,7 @@
   border-radius: 50%;
   background: #fff;
   border: 2px solid #cdd7e3;
-  box-shadow: 0 4px 14px rgba(15, 46, 97, 0.18);
+  box-shadow: 0 4px 14px rgba(15, 46, 97, 0.18), 0 0 0 8px rgba(0,0,0,0);
   margin-top: -9px;
   cursor: pointer;
 }
@@ -59,7 +78,7 @@
   border-radius: 50%;
   background: #fff;
   border: 2px solid #cdd7e3;
-  box-shadow: 0 4px 14px rgba(15, 46, 97, 0.18);
+  box-shadow: 0 4px 14px rgba(15, 46, 97, 0.18), 0 0 0 8px rgba(0,0,0,0);
   cursor: pointer;
 }
 

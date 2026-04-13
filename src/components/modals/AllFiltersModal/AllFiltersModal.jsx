@@ -239,7 +239,7 @@ const AllFiltersModal = ({
                     value={filters.totalKw.min}
                     onChange={(e) => onKwChange('min', e.target.value)}
                   />
-                  <span className="range-inputs__suffix">kW</span>
+                  <span className="range-inputs__suffix">KW</span>
                 </div>
               </label>
               <span className="range-sep">-</span>
@@ -253,7 +253,7 @@ const AllFiltersModal = ({
                     value={filters.totalKw.max}
                     onChange={(e) => onKwChange('max', e.target.value)}
                   />
-                  <span className="range-inputs__suffix">kW</span>
+                  <span className="range-inputs__suffix">KW</span>
                 </div>
               </label>
             </div>
@@ -286,16 +286,6 @@ const AllFiltersModal = ({
                 <span className="pill__label">All States</span>
               </button>
             </div>
-            <div className="chip-list">
-              {filters.states.map((state) => (
-                <span key={state} className="chip chip--selected">
-                  {state}
-                  <button type="button" aria-label={`Remove ${state}`} onClick={() => onToggleStateOption(state, false)}>
-                    ×
-                  </button>
-                </span>
-              ))}
-            </div>
             <div className="pill-grid pill-grid--wrap">
               {filteredStates.map((state) => {
                 const selected = isStateSelected(state);
@@ -303,11 +293,14 @@ const AllFiltersModal = ({
                   <button
                     key={state}
                     type="button"
-                    className={`pill ${selected ? 'pill--active' : ''}`}
+                    className={`pill ${selected ? 'pill--active pill--checked' : ''}`}
                     onClick={() => toggleState(state)}
                     aria-pressed={selected}
                   >
-                    {state}
+                    <span className="pill__check" aria-hidden="true">
+                      <CheckIcon />
+                    </span>
+                    <span className="pill__label">{state}</span>
                   </button>
                 );
               })}
@@ -379,7 +372,7 @@ const AllFiltersModal = ({
 
           <section className="filters-modal__section">
             <h3>Utility</h3>
-            <div className="modal-search modal-search--state">
+            <div className="modal-search modal-search--state utlity-search">
               <SearchIcon />
               <input
                 type="search"
@@ -388,16 +381,6 @@ const AllFiltersModal = ({
                 onChange={(e) => setUtilityQuery(e.target.value)}
               />
             </div>
-            <div className="chip-list">
-              {selectedUtilities.map((utility) => (
-                <span key={utility + '-chip'} className="chip chip--selected">
-                  {utility}
-                  <button type="button" aria-label={`Remove ${utility}`} onClick={() => toggleUtility(utility)}>
-                    ×
-                  </button>
-                </span>
-              ))}
-            </div>
             <div className="pill-grid pill-grid--wrap">
               {filteredUtilities.map((utility) => {
                 const selected = isUtilitySelected(utility);
@@ -405,11 +388,14 @@ const AllFiltersModal = ({
                   <button
                     key={utility + '-option'}
                     type="button"
-                    className={`pill pill--outline pill--state ${selected ? 'pill--active' : ''}`}
+                    className={`pill pill--outline pill--state ${selected ? 'pill--active pill--checked' : ''}`}
                     onClick={() => toggleUtility(utility)}
                     aria-pressed={selected}
                   >
-                    {utility}
+                    <span className="pill__check" aria-hidden="true">
+                      <CheckIcon />
+                    </span>
+                    <span className="pill__label">{utility}</span>
                   </button>
                 );
               })}

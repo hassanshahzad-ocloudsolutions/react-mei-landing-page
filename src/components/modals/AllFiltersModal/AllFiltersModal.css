@@ -223,6 +223,7 @@
   gap: 1rem;
   flex-wrap: wrap;
   margin-top: 0.75rem;
+  margin-bottom: 18px;
 }
 
 .inline-checkbox {
@@ -251,9 +252,7 @@
   display: flex;
   flex-direction: column;
 }
-.range-inputs--modal .range-sep {
-  margin-top: 1.9rem;
-}
+
 
 .range-inputs__legend {
   font-size: 0.85rem;
@@ -275,6 +274,7 @@
 .range-inputs__number {
   display: flex;
   align-items: center;
+  justify-content: space-between;
   border: 1px solid rgba(132, 161, 201, 0.5);
   border-radius: 22px;
   padding: 0.45rem 0.9rem;
@@ -283,8 +283,9 @@
   box-shadow: 0 8px 22px rgba(15, 46, 97, 0.08);
 }
 
-.range-inputs__number input {
+.range-inputs__number input[type="number"] {
   border: none;
+  outline: none;
   width: 90px;
   font-size: 1rem;
   background: transparent;
@@ -331,19 +332,7 @@
   color: #0b1f3b;
 }
 
-@media (max-width: 768px) {
-  .filters-modal {
-    width: 50vh;
-    max-height: 100vh;
-    border-radius: 0;
-  }
-
-  .filters-modal__body {
-    padding: 1.25rem;
-  }
-
-  .filters-modal__footer {
-    flex-direction: column;
-    gap: 0.8rem;
-  }
+.utlity-search{
+  margin-bottom: 10px;
 }
+
